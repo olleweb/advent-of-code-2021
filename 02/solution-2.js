@@ -9,16 +9,12 @@ function getPosition() {
                     positionObj.horizontalPos += x;
                     positionObj.depth += positionObj.aim * x;
                 }
-                else {
-                    if (currentValue.startsWith("down")) {
-                        positionObj.aim += Number(currentValue.substring(5));
-                    }
-                    else {
-                        if (currentValue.startsWith("up")) {
-                            positionObj.aim -= Number(currentValue.substring(3));
-                        }
-                    }
-                };
+                else if (currentValue.startsWith("down")) {
+                    positionObj.aim += Number(currentValue.substring(5));
+                }
+                else if (currentValue.startsWith("up")) {
+                    positionObj.aim -= Number(currentValue.substring(3));
+                }
                 return positionObj;
             },
             {
